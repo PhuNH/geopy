@@ -21,7 +21,7 @@ def display_map(image_file):
    cv2.destroyAllWindows()
 
 def create_map(shapefile, gpx_file, style_file, output_image, size=(800, 600)):
-   """Create a map from a XML file and write it to an image
+   """Create a map from an XML file and write it to an image
    :param shapefile: Shapefile containing the data for the map
    :param gpx_file: geocaching points
    :param style_file: Mapnik XML file
