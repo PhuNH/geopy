@@ -6,17 +6,21 @@ Created on Thu Apr 18 14:08:55 2019
 @author: phunh
 """
 
-from utils.geo_functions import open_vector_file, transform_points, transform_geometries
-
+from utils.geo_functions import transform_points, transform_geometries
+from models import Geocache, PointCollection
+import gdal
 import numpy as np
 import math
+from pprint import pprint
 
-class GeocachingApp(object):
+class GeocachingApp(PointCollection):
    def __init__(self, data_file=None, my_location=None):
       """Application class
       :param data_file: An OGR compatible file with geocaching points
       :param my_location: Coordinates of your location
       """
+      super(GeocachingApp, self).__init__(file_path=data_file)
+      
       # Part 1
       self._datasource = None
       self._transformed_geoms = None
@@ -24,8 +28,6 @@ class GeocachingApp(object):
       self.distances = None
       
       # Part 2
-      if data_file:
-         self.open_file(data_file)
       if my_location:
          self._my_location = my_location
          
@@ -72,5 +74,7 @@ class GeocachingApp(object):
       return feature
 
 if __name__ == "__main__":
-   my_app = GeocachingApp('../data/geocaching.gpx', [-73.0, 43.0])
-   my_app.find_closest_point()
+   # '../data/geocaching.gpx', [-73.0, 43.0]
+   my_app = GeocachingApp()
+   my_app.import_data('../data/geocaching.gpx')
+   my_app.describe()
