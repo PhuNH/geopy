@@ -1,0 +1,26 @@
+<Map background-color="white" maximum-extent_="-81,40,-69,45" background-image="../../data/images/old-paper_.png">
+   <Style name="style1">
+      <Rule>
+         <PolygonSymbolizer fill="#f2eff9" />
+         <!--<PolygonPatternSymbolizer file="../../data/images/tree_pattern.png" />-->
+         <LineSymbolizer stroke="red" stroke-width="1.0" />
+         <TextSymbolizer face-name="DejaVu Sans Book" size="10" fill="black" halo-fill="white" halo-radius="1"
+            placement="interior" allow-overlap="false">[NAME]</TextSymbolizer>
+      </Rule>
+   </Style>
+   
+   <Style name="style2">
+      <Rule>
+         <PointSymbolizer file="../../data/images/marker.svg"
+            transform="scale(0.3)" />
+      </Rule>
+   </Style>
+   
+   <!--<Layer name="world">
+      <StyleName>My Style</StyleName>
+      <Datasource>
+         <Parameter name="file">../../data/world_borders_simple.shp</Parameter>
+         <Parameter name="type">shape</Parameter>
+      </Datasource>
+   </Layer>-->
+</Map>
