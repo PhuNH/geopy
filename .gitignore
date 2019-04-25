@@ -3,5 +3,5 @@
 .idea
 .spyproject
 *.pyc
-/chap5/output
-/chap5/temp
+output/
+temp/
